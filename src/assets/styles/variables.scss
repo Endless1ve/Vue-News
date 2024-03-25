@@ -1,0 +1,16 @@
+$title-font: "RobotoSlab", Arial, Helvetica, sans-serif;
+$text-font: "Roboto", Arial, Helvetica, sans-serif;
+$main-dark-color: #1a1b22;
+$second-dark-color: #347eff;
+$main-light-color: #ffffff;
+$second-ligth-color: #b6bcbf;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
