@@ -16,3 +16,9 @@
     padding: 15px 0;
   }
 }
+
+.button:disabled {
+  background-color: #b6bcbf;
+  animation: none !important;
+  cursor: default;
+}
