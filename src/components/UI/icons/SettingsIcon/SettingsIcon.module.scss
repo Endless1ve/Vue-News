@@ -1,0 +1,14 @@
+.iconPath {
+  stroke: $main-dark-color;
+
+  @media screen and (width <= 650px) {
+    stroke: $main-light-color;
+  }
+}
+.iconLigth {
+  stroke: $main-light-color;
+}
+
+.router-link-active .iconPath {
+  stroke: $second-dark-color;
+}

@@ -1,0 +1,30 @@
+.linksList {
+  align-items: center;
+  gap: 20px 30px;
+  @include flex-row;
+
+  @media screen and (width <= 630px) {
+    align-items: flex-start;
+    @include flex-column;
+  }
+}
+
+.linkItem {
+  font-family: $text-font;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  text-align: center;
+
+  @media screen and (width <= 630px) {
+    color: $main-light-color;
+  }
+
+  & .router-link-active {
+    color: $second-dark-color;
+  }
+}
+
+.link-light {
+  color: $main-light-color;
+}

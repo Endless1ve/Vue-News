@@ -1,0 +1,15 @@
+.iconPath {
+  fill: $main-dark-color;
+
+  @media screen and (width <= 650px) {
+    fill: $main-light-color;
+  }
+}
+
+.iconLigth {
+  fill: $main-light-color;
+}
+
+.router-link-active .iconPath {
+  fill: $second-dark-color;
+}
