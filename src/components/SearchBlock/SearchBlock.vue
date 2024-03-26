@@ -8,6 +8,7 @@
           новостях за прошедшую неделю.
         </p>
       </div>
+      <SearchActions />
     </div>
   </section>
 </template>
