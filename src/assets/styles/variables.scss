@@ -10,6 +10,11 @@ $second-ligth-color: #b6bcbf;
   flex-direction: column;
 }
 
+@mixin flex-column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 @mixin flex-row {
   display: flex;
   flex-direction: row;
