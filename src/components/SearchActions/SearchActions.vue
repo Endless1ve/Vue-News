@@ -12,9 +12,6 @@
       </ButtonItem>
     </div>
   </div>
-  <button v-if="page < totalPages" @click="fetchMoreNews">
-    Загрузить еще...
-  </button>
 </template>
 
 <script>

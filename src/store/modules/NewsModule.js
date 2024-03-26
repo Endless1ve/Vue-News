@@ -1,4 +1,5 @@
 import axios from "axios";
+// import DateModule from "./DateModule";
 
 const NewsModule = {
   state: () => ({
@@ -17,6 +18,7 @@ const NewsModule = {
     lang: "ru",
 
     isNewsLoading: false,
+    isPopularLoading: false,
   }),
 
   mutations: {
@@ -47,20 +49,48 @@ const NewsModule = {
     setPopularNews(state, news) {
       state.popularNews = news;
     },
+
+    setPopularLoading(state, bool) {
+      state.isPopularLoading = bool;
+    },
   },
   actions: {
-    async fetchNews({ state, commit }) {
+    async fetchPopular({ state, commit, rootState }) {
       try {
-        commit("setNewsLoading", true);
-
+        commit("setPopularLoading", true);
         const response = await axios.get(
           "https://nomoreparties.co/news/v2/everything",
           {
             params: {
               apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
               q: state.searchQuery,
-              from: "2024-03-10",
-              to: "2024-03-17",
+              from: rootState.Date.dateWeekAgo,
+              to: rootState.Date.dateNow,
+              language: state.language,
+              pageSize: state.popularPageSize,
+              page: state.page,
+            },
+          }
+        );
+        commit("setPopularNews", response.data.articles);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        commit("setPopularLoading", false);
+      }
+    },
+
+    async fetchNews({ state, commit, rootState }) {
+      try {
+        commit("setNewsLoading", true);
+        const response = await axios.get(
+          "https://nomoreparties.co/news/v2/everything",
+          {
+            params: {
+              apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
+              q: state.searchQuery,
+              from: rootState.Date.dateWeekAgo,
+              to: rootState.Date.dateNow,
               language: state.language,
               pageSize: state.pageSize,
               page: state.page,
@@ -91,7 +121,7 @@ const NewsModule = {
       }
     },
 
-    async fetchMoreNews({ state, commit }) {
+    async fetchMoreNews({ state, commit, rootState }) {
       try {
         commit("setNewsLoading", true);
         commit("setPage", state.page + 1);
@@ -102,8 +132,8 @@ const NewsModule = {
             params: {
               apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
               q: state.savedQuery,
-              from: "2024-03-10",
-              to: "2024-03-17",
+              from: rootState.Date.dateWeekAgo,
+              to: rootState.Date.dateNow,
               language: state.language,
               pageSize: state.pageSize,
               page: state.page,
