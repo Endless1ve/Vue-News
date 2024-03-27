@@ -89,22 +89,26 @@ const NewsModule = {
 
     async fetchNews({ state, commit, dispatch, rootState }) {
       try {
-        commit("setNewsLoading", true);
-        const response = await axios.get(
-          "https://nomoreparties.co/news/v2/everything",
-          {
-            params: {
-              apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
-              q: state.searchQuery,
-              from: rootState.Date.dateWeekAgo,
-              to: rootState.Date.dateNow,
-            },
-          }
-        );
-        commit("setTotalNews", response.data.articles.length);
-        commit("setNews", response.data.articles);
-        commit("setNewsCounter", 0);
-        dispatch("renderNews");
+        if (state.searchQuery) {
+          commit("setNewsLoading", true);
+          const response = await axios.get(
+            "https://nomoreparties.co/news/v2/everything",
+            {
+              params: {
+                apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
+                q: state.searchQuery,
+                from: rootState.Date.dateWeekAgo,
+                to: rootState.Date.dateNow,
+              },
+            }
+          );
+          commit("setTotalNews", response.data.articles.length);
+          commit("setNews", response.data.articles);
+          commit("setNewsCounter", 0);
+          dispatch("renderNews");
+        } else {
+          alert("Введите ключевое слово в строку поиска");
+        }
       } catch (err) {
         console.log(err);
       } finally {
