@@ -1,24 +1,26 @@
 import axios from "axios";
-// import DateModule from "./DateModule";
+
+axios;
 
 const NewsModule = {
   state: () => ({
     searchQuery: "",
-    savedQuery: "",
     popularQuery: "JavaScript",
 
     news: [],
+    totalNews: 0,
+
+    newsCounter: 0,
+    renderSize: 3,
+
     popularNews: [],
-
-    newsLimit: 100,
-    pageSize: 3,
+    pageSize: 8,
     page: 1,
-    totalPages: 0,
-    popularPageSize: 8,
-    lang: "ru",
 
-    isNewsLoading: false,
     isPopularLoading: false,
+    isNewsLoading: false,
+    isMoreNews: false,
+    isNoResults: false,
   }),
 
   mutations: {
@@ -26,48 +28,53 @@ const NewsModule = {
       state.searchQuery = query;
     },
 
-    setSavedQuery(state) {
-      state.savedQuery = state.searchQuery;
-    },
-
     setNews(state, news) {
       state.news = news;
     },
 
-    setNewsLoading(state, bool) {
-      state.isNewsLoading = bool;
+    setNewsCounter(state, num) {
+      state.newsCounter = num;
     },
 
-    setPage(state, page) {
-      state.page = page;
+    increaseNewsCounter(state, num) {
+      state.newsCounter = state.newsCounter + num;
     },
 
-    setTotalPages(state, pages) {
-      state.totalPages = pages;
+    setTotalNews(state, num) {
+      state.totalNews = num;
     },
 
     setPopularNews(state, news) {
       state.popularNews = news;
     },
 
+    setMoreNews(state, bool) {
+      state.isMoreNews = bool;
+    },
+
+    setNewsLoading(state, bool) {
+      state.isNewsLoading = bool;
+    },
+
     setPopularLoading(state, bool) {
       state.isPopularLoading = bool;
     },
   },
+
   actions: {
-    async fetchPopular({ state, commit, rootState }) {
+    async fetchPopularNews({ state, commit, rootState }) {
       try {
         commit("setPopularLoading", true);
         const response = await axios.get(
           "https://nomoreparties.co/news/v2/everything",
           {
             params: {
-              apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
-              q: state.searchQuery,
+              apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
+              q: state.popularQuery,
               from: rootState.Date.dateWeekAgo,
               to: rootState.Date.dateNow,
-              language: state.language,
-              pageSize: state.popularPageSize,
+              sortBy: "popularity",
+              pageSize: state.pageSize,
               page: state.page,
             },
           }
@@ -80,40 +87,24 @@ const NewsModule = {
       }
     },
 
-    async fetchNews({ state, commit, rootState }) {
+    async fetchNews({ state, commit, dispatch, rootState }) {
       try {
         commit("setNewsLoading", true);
         const response = await axios.get(
           "https://nomoreparties.co/news/v2/everything",
           {
             params: {
-              apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
+              apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
               q: state.searchQuery,
               from: rootState.Date.dateWeekAgo,
               to: rootState.Date.dateNow,
-              language: state.language,
-              pageSize: state.pageSize,
-              page: state.page,
             },
           }
         );
-        if (response.data.totalResults === 0) {
-          commit("setTotalPages", 0);
-        } else {
-          commit("setSavedQuery");
-          commit("setNews", response.data.articles);
-          if (response.data.totalResults > 100) {
-            commit(
-              "setTotalPages",
-              Math.ceil(state.newsLimit / state.pageSize)
-            );
-          } else {
-            commit(
-              "setTotalPages",
-              Math.ceil(response.data.totalResults / state.pageSize)
-            );
-          }
-        }
+        commit("setTotalNews", response.data.articles.length);
+        commit("setNews", response.data.articles);
+        commit("setNewsCounter", 0);
+        dispatch("renderNews");
       } catch (err) {
         console.log(err);
       } finally {
@@ -121,31 +112,11 @@ const NewsModule = {
       }
     },
 
-    async fetchMoreNews({ state, commit, rootState }) {
-      try {
-        commit("setNewsLoading", true);
-        commit("setPage", state.page + 1);
-
-        const response = await axios.get(
-          "https://nomoreparties.co/news/v2/everything",
-          {
-            params: {
-              apiKey: "97b7f9eb48c34d13a7461ddeb9126240",
-              q: state.savedQuery,
-              from: rootState.Date.dateWeekAgo,
-              to: rootState.Date.dateNow,
-              language: state.language,
-              pageSize: state.pageSize,
-              page: state.page,
-            },
-          }
-        );
-        commit("setNews", [...state.news, ...response.data.articles]);
-      } catch (err) {
-        console.log(err);
-      } finally {
-        commit("setNewsLoading", false);
-      }
+    renderNews({ state, commit }) {
+      if (state.newsCounter < state.totalNews) {
+        commit("increaseNewsCounter", state.renderSize);
+        commit("setMoreNews", true);
+      } else commit("setMoreNews", false);
     },
   },
   namespaced: true,

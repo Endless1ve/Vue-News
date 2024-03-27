@@ -12,12 +12,6 @@ export default {
     searchQuery() {
       return this.$store.state.News.searchQuery;
     },
-    totalPages() {
-      return this.$store.state.News.totalPages;
-    },
-    page() {
-      return this.$store.state.News.page;
-    },
   },
   methods: {
     ...mapMutations({
@@ -25,7 +19,6 @@ export default {
     }),
     ...mapActions({
       fetchNews: "News/fetchNews",
-      fetchMoreNews: "News/fetchMoreNews",
     }),
     updateSearchQuery(e) {
       this.updateStoreQuery(e.target.value);

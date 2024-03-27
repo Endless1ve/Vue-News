@@ -6,9 +6,13 @@ export default {
   methods: {
     ...mapActions({
       getDate: "Date/getDate",
+      fetchPopularNews: "News/fetchPopularNews",
     }),
   },
   created() {
     this.getDate();
+  },
+  mounted() {
+    this.fetchPopularNews();
   },
 };
