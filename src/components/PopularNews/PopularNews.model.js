@@ -1,7 +1,5 @@
+import PopularList from "@/components/PopularList/PopularList.vue";
+
 export default {
-  computed: {
-    popularNews() {
-      return this.$store.state.News.popularNews;
-    },
-  },
+  components: { PopularList },
 };
