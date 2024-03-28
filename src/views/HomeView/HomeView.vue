@@ -1,5 +1,6 @@
 <template>
   <SearchBlock />
+  <PopularNews />
   <div>home</div>
 </template>
 
