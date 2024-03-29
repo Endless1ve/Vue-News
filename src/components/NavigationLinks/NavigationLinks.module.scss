@@ -4,17 +4,15 @@
   @include flex-row;
 }
 
-.header > .linksList {
+.headerMenu > .linksList {
   @media screen and (width <= 630px) {
     align-items: flex-start;
     @include flex-column;
   }
 }
 
-.header > .linkItem {
-  & .router-link-active {
-    color: $second-dark-color;
-  }
+.headerMenu > .linksList .router-link-active {
+  color: $second-dark-color;
 }
 
 .linkItem {
