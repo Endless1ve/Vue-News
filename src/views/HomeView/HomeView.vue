@@ -3,7 +3,9 @@
 </template>
 
 <script>
-export default {};
+  import HomeView from "./HomeView.model";
+
+  export default HomeView;
 </script>
 
 <style lang="scss" scoped></style>
