@@ -6,6 +6,7 @@
   border-bottom: 1px #c4c4c4 solid;
   padding: 28px 104px;
   color: $main-dark-color;
+  background-color: transparent;
   @include flex-row;
 
   @media screen and (width <= 1024px) {
@@ -19,7 +20,6 @@
 
 .headerLight {
   color: $main-light-color;
-  background-color: teal;
 }
 
 .headerDark {
