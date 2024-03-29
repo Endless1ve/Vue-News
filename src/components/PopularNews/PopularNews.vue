@@ -1,5 +1,6 @@
 <template>
-  <section class="popularNews">
+  <PreloaderBlock v-if="isPopularLoading" />
+  <section class="popularNews" v-else>
     <h2 class="popularTitle">Популярные новости за сегодня</h2>
     <PopularList />
   </section>
