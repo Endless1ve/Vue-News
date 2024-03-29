@@ -16,10 +16,6 @@
   line-height: 133%;
   text-align: center;
 
-  @media screen and (width <= 630px) {
-    color: $main-light-color;
-  }
-
   & .router-link-active {
     color: $second-dark-color;
   }

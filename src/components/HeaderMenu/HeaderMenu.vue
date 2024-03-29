@@ -1,6 +1,6 @@
 <template>
   <nav class="headerMenu">
-    <NavigationLinks />
+    <NavigationLinks :class="{ 'link-light': isHeaderLight || isMenuOpen }" />
     <MenuIcons />
   </nav>
 </template>

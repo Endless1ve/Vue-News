@@ -1,9 +1,9 @@
 <template>
   <ul class="linksList">
-    <li class="linkItem" :class="{ 'link-light': isHeaderLight }">
+    <li class="linkItem">
       <RouterLink to="/">Главная</RouterLink>
     </li>
-    <li class="linkItem" :class="{ 'link-light': isHeaderLight }">
+    <li class="linkItem">
       <RouterLink to="/about">О проекте</RouterLink>
     </li>
   </ul>
