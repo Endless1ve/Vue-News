@@ -14,5 +14,6 @@
     max-width: 1440px;
     width: 100%;
     height: 100%;
+    font-weight: 400;
   }
 </style>
