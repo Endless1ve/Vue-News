@@ -1,6 +1,6 @@
 const AuthModule = {
   state: () => ({
-    isAuth: false,
+    isAuth: true,
   }),
   getters: {
     isAuth(state) {
