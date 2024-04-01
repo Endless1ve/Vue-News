@@ -1,0 +1,26 @@
+.header {
+  position: relative;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  border-bottom: 1px $second-ligth-color solid;
+  padding: 28px 104px;
+  color: $main-dark-color;
+  background-color: transparent;
+  @include flex-row;
+
+  @media screen and (max-width: 1024px) {
+    padding: 20px 40px;
+  }
+
+  @media screen and (max-width: 425px) {
+    padding: 16px;
+  }
+}
+
+.headerLogo {
+  font-family: $title-font;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+}
