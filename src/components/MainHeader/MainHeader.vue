@@ -4,6 +4,7 @@
     :class="{ 'header-light': isHeaderLight, 'header-dark': isMenuOpen }">
     <p class="headerLogo">VueNews</p>
     <HeaderMenu v-if="isMenuOpen || isLargeScreen" />
+    <BurgerButton @click="toggleMenu" />
   </header>
 </template>
 
