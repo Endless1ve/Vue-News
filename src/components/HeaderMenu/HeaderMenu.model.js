@@ -1,3 +1,4 @@
+import { mapGetters } from "vuex";
 import NavigationLinks from "@/components/NavigationLinks/NavigationLinks.vue";
 import MenuIcons from "@/components/MenuIcons/MenuIcons.vue";
 
@@ -7,11 +8,9 @@ export default {
     MenuIcons,
   },
   computed: {
-    isHeaderLight() {
-      return this.$store.state.Header.isHeaderLight;
-    },
-    isMenuOpen() {
-      return this.$store.state.Menu.isMenuOpen;
-    },
+    ...mapGetters({
+      isHeaderLight: "Header/isHeaderLight",
+      isMenuOpen: "Menu/isMenuOpen",
+    }),
   },
 };

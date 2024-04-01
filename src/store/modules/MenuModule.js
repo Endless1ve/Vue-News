@@ -3,6 +3,14 @@ const MenuModule = {
     isMenuOpen: false,
     isLargeScreen: window.innerWidth > 630,
   }),
+  getters: {
+    isMenuOpen(state) {
+      return state.isMenuOpen;
+    },
+    isLargeScreen(state) {
+      return state.isLargeScreen;
+    },
+  },
   mutations: {
     updateLargeState(state) {
       state.isLargeScreen = window.innerWidth > 630;

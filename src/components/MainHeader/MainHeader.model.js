@@ -1,4 +1,4 @@
-import { mapActions, mapMutations } from "vuex";
+import { mapActions, mapMutations, mapGetters } from "vuex";
 
 import HeaderMenu from "@/components/HeaderMenu/HeaderMenu.vue";
 import BurgerButton from "@/components/UI/BurgerButton/BurgerButton.vue";
@@ -18,15 +18,11 @@ export default {
     }),
   },
   computed: {
-    isMenuOpen() {
-      return this.$store.state.Menu.isMenuOpen;
-    },
-    isHeaderLight() {
-      return this.$store.state.Header.isHeaderLight;
-    },
-    isLargeScreen() {
-      return this.$store.state.Menu.isLargeScreen;
-    },
+    ...mapGetters({
+      isHeaderLight: "Header/isHeaderLight",
+      isMenuOpen: "Menu/isMenuOpen",
+      isLargeScreen: "Menu/isLargeScreen",
+    }),
   },
   mounted() {
     window.addEventListener("resize", this.handleResize);

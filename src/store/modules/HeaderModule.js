@@ -2,6 +2,11 @@ const HeaderModule = {
   state: () => ({
     isHeaderLight: false,
   }),
+  getters: {
+    isHeaderLight(state) {
+      return state.isHeaderLight;
+    },
+  },
   mutations: {
     setLight(state) {
       state.isHeaderLight = true;
