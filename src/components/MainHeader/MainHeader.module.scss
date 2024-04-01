@@ -28,3 +28,8 @@
 .header-light {
   color: $main-light-color;
 }
+
+.header-dark {
+  color: $main-light-color;
+  background-color: $main-dark-color;
+}

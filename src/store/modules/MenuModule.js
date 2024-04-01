@@ -1,7 +1,7 @@
 const MenuModule = {
   state: () => ({
     isMenuOpen: false,
-    isLargeScreen: window.innerWidth > 630,
+    isLargeScreen: window.innerWidth > 650,
   }),
   getters: {
     isMenuOpen(state) {
@@ -13,7 +13,7 @@ const MenuModule = {
   },
   mutations: {
     updateLargeState(state) {
-      state.isLargeScreen = window.innerWidth > 630;
+      state.isLargeScreen = window.innerWidth > 650;
     },
     toggleMenu(state) {
       state.isMenuOpen = !state.isMenuOpen;

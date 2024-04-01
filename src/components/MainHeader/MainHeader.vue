@@ -1,7 +1,9 @@
 <template>
-  <header class="header" :class="{ 'header-light': isHeaderLight }">
+  <header
+    class="header"
+    :class="{ 'header-light': isHeaderLight, 'header-dark': isMenuOpen }">
     <p class="headerLogo">VueNews</p>
-    <HeaderMenu />
+    <HeaderMenu v-if="isMenuOpen || isLargeScreen" />
   </header>
 </template>
 
