@@ -1,6 +1,5 @@
 <template>
   <MainHeader />
-  <div>home</div>
 </template>
 
 <script>
