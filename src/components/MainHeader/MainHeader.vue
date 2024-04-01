@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header-light': isHeaderLight }">
     <p class="headerLogo">VueNews</p>
     <HeaderMenu />
   </header>
