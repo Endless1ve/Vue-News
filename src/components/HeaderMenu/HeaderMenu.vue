@@ -1,6 +1,7 @@
 <template>
   <nav class="headerMenu">
     <NavigationLinks />
+    <MenuIcons />
   </nav>
 </template>
 

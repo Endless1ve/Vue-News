@@ -1,0 +1,19 @@
+.menuIcons {
+  align-items: center;
+  @include flex-row;
+
+  @media screen and (max-width: 630px) {
+    margin: 0 0 50px;
+  }
+}
+
+.iconsContent {
+  align-items: center;
+  gap: 0 40px;
+  @include flex-row;
+
+  @media screen and (max-width: 630px) {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
