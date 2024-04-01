@@ -1,7 +1,9 @@
 <template>
   <div class="menuIcons">
-    <!-- <IconBase :iconName="'Авторизация'"> <ProfileIcon /></IconBase> -->
-    <div class="iconsContent">
+    <IconBase v-if="!isAuth" :iconName="'Авторизация'">
+      <ProfileIcon />
+    </IconBase>
+    <div v-else class="iconsContent">
       <RouterLink to="/">
         <IconBase :iconName="'Профиль'"><ProfileIcon /></IconBase>
       </RouterLink>
