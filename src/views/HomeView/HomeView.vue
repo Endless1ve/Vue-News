@@ -4,9 +4,9 @@
 </template>
 
 <script>
-import HomeView from "./HomeView.model";
+  import HomeView from "./HomeView.model";
 
-export default HomeView;
+  export default HomeView;
 </script>
 
 <style lang="scss" scoped></style>
