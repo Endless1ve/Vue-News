@@ -1,6 +1,7 @@
 <template>
   <header class="header">
     <p class="headerLogo">VueNews</p>
+    <HeaderMenu />
   </header>
 </template>
 

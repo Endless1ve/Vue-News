@@ -1,13 +1,15 @@
 <template>
-  <div>About</div>
+  <div>
+    <MainHeader />
+  </div>
 </template>
 
 <script>
-import AboutView from "./AboutView.model";
+  import AboutView from "./AboutView.model";
 
-export default AboutView;
+  export default AboutView;
 </script>
 
 <style lang="scss" scoped>
-@import "./AboutView.module.scss";
+  @import "./AboutView.module.scss";
 </style>

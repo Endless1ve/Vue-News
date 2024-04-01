@@ -1,5 +1,7 @@
 <template>
-  <nav class="headerMenu"></nav>
+  <nav class="headerMenu">
+    <NavigationLinks />
+  </nav>
 </template>
 
 <script>
