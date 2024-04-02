@@ -4,7 +4,7 @@ import NewsModule from "./modules/NewsModule";
 
 const store = createStore({
   modules: {
-    NewsModule,
+    news: NewsModule,
   },
   strict: process.env.NODE_ENV !== "production",
 });

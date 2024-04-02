@@ -1,5 +1,9 @@
 <template>
-  <input type="text" class="input" placeholder="Введите тему новости" />
+  <input
+    type="text"
+    class="input"
+    placeholder="Введите тему новости"
+    v-model.trim="query" />
 </template>
 
 <script>
