@@ -11,16 +11,16 @@
 }
 
 .searchContent {
-  gap: 64px;
   width: 100%;
   max-width: 608px;
   padding: 80px 0;
+  @include gap-check-supports(64px, 0);
   @include flex-column;
 
   @media screen and (max-width: 768px) {
-    gap: 24px;
     max-width: 452px;
     padding: 40px 16px;
+    @include gap-check-supports(24px, 0);
   }
 
   @media screen and (max-width: 475px) {
@@ -29,11 +29,11 @@
 }
 
 .searchTexts {
-  gap: 32px;
+  @include gap-check-supports(32px, 0);
   @include flex-column;
 
   @media screen and (max-width: 768px) {
-    gap: 16px;
+    @include gap-check-supports(16px, 0);
   }
 }
 
