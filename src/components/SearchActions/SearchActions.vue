@@ -1,8 +1,10 @@
 <template>
   <div class="searchActions">
-    <InputItem />
+    <InputItem @keyup.enter="fetchNews" />
     <div class="searchButton">
-      <ButtonItem>Искать</ButtonItem>
+      <ButtonItem @click="fetchNews" :disabled="!searchQuery">
+        Искать
+      </ButtonItem>
     </div>
   </div>
 </template>

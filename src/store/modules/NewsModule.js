@@ -3,7 +3,7 @@ import axios from "axios";
 const NewsModule = {
   state: () => ({
     searchQuery: "",
-    popularQuery: "JavaScript",
+    popularQuery: "Фронтенд",
 
     news: [],
     totalNews: 0,
@@ -20,6 +20,12 @@ const NewsModule = {
     isMoreNews: false,
     isNoResults: false,
   }),
+
+  getters: {
+    searchQuery(state) {
+      return state.searchQuery;
+    },
+  },
 
   mutations: {
     updateSearchQuery(state, query) {
