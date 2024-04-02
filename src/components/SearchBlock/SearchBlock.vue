@@ -1,6 +1,5 @@
 <template>
   <section class="search">
-    <div class="mockHeader"></div>
     <div class="searchContent">
       <div class="searchTexts">
         <h1 class="title">Что в мире творится?</h1>
