@@ -3,7 +3,7 @@ import axios from "axios";
 const NewsModule = {
   state: () => ({
     searchQuery: "",
-    popularQuery: "Фронтенд",
+    popularQuery: "Айти",
 
     news: [],
     totalNews: 0,
@@ -24,6 +24,9 @@ const NewsModule = {
   getters: {
     searchQuery(state) {
       return state.searchQuery;
+    },
+    popularNews(state) {
+      return state.popularNews;
     },
   },
 
