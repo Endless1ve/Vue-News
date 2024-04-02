@@ -69,8 +69,8 @@ const NewsModule = {
             params: {
               apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
               q: state.popularQuery,
-              from: rootState.Date.dateWeekAgo,
-              to: rootState.Date.dateNow,
+              from: rootState.date.dateWeekAgo,
+              to: rootState.date.dateNow,
               sortBy: "popularity",
               lang: "ru",
               pageSize: state.pageSize,
@@ -96,8 +96,8 @@ const NewsModule = {
               params: {
                 apiKey: process.env.VUE_APP_NEWS_API_KEY_SECOND,
                 q: state.searchQuery,
-                from: rootState.Date.dateWeekAgo,
-                to: rootState.Date.dateNow,
+                from: rootState.date.dateWeekAgo,
+                to: rootState.date.dateNow,
               },
             }
           );
