@@ -1,12 +1,11 @@
 .linksList {
   align-items: center;
-  gap: 20px 30px;
   @include flex-row;
-}
+  @include gap-check-supports(0, 30px);
 
-.headerMenu > .linksList {
   @media screen and (max-width: 650px) {
     align-items: flex-start;
+    @include gap-check-supports(20px, 0);
     @include flex-column;
   }
 }

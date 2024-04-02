@@ -9,7 +9,9 @@
 
 .iconsContent {
   align-items: center;
-  gap: 0 40px;
+
+  @include gap-check-supports(0, 40px);
+
   @include flex-row;
 
   @media screen and (max-width: 650px) {
