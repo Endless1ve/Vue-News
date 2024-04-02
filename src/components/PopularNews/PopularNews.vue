@@ -1,7 +1,10 @@
 <template>
   <section class="popularNews">
-    <h2 class="popularTitle">Популярные новости за сегодня</h2>
-    <PopularList />
+    <PreloaderBlock v-if="isPopularLoading" />
+    <div class="content" v-else>
+      <h2 class="popularTitle">Популярные новости за сегодня</h2>
+      <PopularList />
+    </div>
   </section>
 </template>
 

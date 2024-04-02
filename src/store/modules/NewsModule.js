@@ -28,6 +28,9 @@ const NewsModule = {
     popularNews(state) {
       return state.popularNews;
     },
+    isPopularLoading(state) {
+      return state.isPopularLoading;
+    },
   },
 
   mutations: {
