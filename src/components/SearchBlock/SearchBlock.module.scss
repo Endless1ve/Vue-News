@@ -1,14 +1,12 @@
 .search {
   align-items: center;
-  background-image: url("/public/images/searchBg.png");
+  background-image: url($search-image);
   background-position: center top;
   background-size: cover;
   @include flex-column;
 
   @media screen and (max-width: 400px) {
-    background-image: url("/public/images/searchBg-min.png");
-    background-position: 0% 0%;
-    background-size: auto;
+    background-image: url($search-image-min);
   }
 }
 
