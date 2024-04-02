@@ -23,3 +23,16 @@ $search-image-min: "/public/images/searchBg-min.png";
   display: flex;
   flex-direction: row;
 }
+
+@mixin gap-check-supports($column-gap: null, $row-gap: null) {
+  @supports (gap: $column-gap) {
+    gap: $column-gap $row-gap;
+  }
+
+  @supports not (gap: $column-gap) {
+    & > :not(:last-child) {
+      margin-right: $row-gap;
+      margin-bottom: $column-gap;
+    }
+  }
+}
