@@ -1,0 +1,21 @@
+.searchActions {
+  position: relative;
+
+  @media screen and (max-width: 425px) {
+    @include flex-column;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 168px;
+
+  @media screen and (max-width: 425px) {
+    position: relative;
+    max-width: 100%;
+    margin-top: 16px;
+  }
+}
