@@ -1,5 +1,7 @@
 <template>
-  <div>home</div>
+  <div>
+    <NewsBlock />
+  </div>
 </template>
 
 <script>
