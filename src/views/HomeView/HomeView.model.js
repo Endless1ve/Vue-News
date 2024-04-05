@@ -11,6 +11,7 @@ export default {
   methods: {
     ...mapActions({
       fetchPopularNews: "news/fetchPopularNews",
+      getDate: "date/getDate",
     }),
   },
   computed: {
@@ -20,6 +21,7 @@ export default {
   },
 
   created() {
+    this.getDate();
     this.fetchPopularNews();
   },
 };

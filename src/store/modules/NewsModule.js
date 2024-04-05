@@ -116,6 +116,7 @@ const NewsModule = {
                 q: state.searchQuery,
                 from: rootState.date.dateWeekAgo,
                 to: rootState.date.dateNow,
+                sortBy: "publishedAt",
               },
             }
           );

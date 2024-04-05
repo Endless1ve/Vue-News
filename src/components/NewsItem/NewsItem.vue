@@ -4,7 +4,7 @@
       <img class="itemImage" :src="item.urlToImage" :alt="item.title" />
       <div class="itemTexts">
         <div class="textsContent">
-          <p class="itemDate">{{ item.publishedAt }}</p>
+          <p class="itemDate">{{ formatDate(item.publishedAt) }}</p>
           <h4 class="itemTitle">{{ item.title }}</h4>
           <p class="itemDescription">{{ item.description }}</p>
         </div>
