@@ -3,6 +3,9 @@
     <div class="content">
       <h2 class="title">Результаты поиска</h2>
       <NewsList />
+      <div class="button" v-if="isMoreNews" @click="renderNews">
+        <LoadButton>Показать еще</LoadButton>
+      </div>
     </div>
   </section>
 </template>

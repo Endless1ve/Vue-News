@@ -135,8 +135,8 @@ const NewsModule = {
     },
 
     renderNews({ state, commit }) {
+      commit("increaseNewsCounter", state.renderSize);
       if (state.newsCounter < state.totalNews) {
-        commit("increaseNewsCounter", state.renderSize);
         commit("setMoreNews", true);
       } else commit("setMoreNews", false);
     },

@@ -12,7 +12,7 @@ export default {
       const month = this.formatMonth(newDate.getMonth());
       const year = newDate.getFullYear();
       const formattedDate = `${day} ${month}, ${year}`;
-      console.log(day);
+
       return formattedDate;
     },
     formatMonth(month) {
