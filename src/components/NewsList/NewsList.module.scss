@@ -1,0 +1,16 @@
+.newsList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 400px));
+  gap: 20px;
+  justify-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(300px, 400px));
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, minmax(250px, 400px));
+  }
+}

@@ -2,6 +2,7 @@
   <section class="news">
     <div class="content">
       <h2 class="title">Результаты поиска</h2>
+      <NewsList />
     </div>
   </section>
 </template>

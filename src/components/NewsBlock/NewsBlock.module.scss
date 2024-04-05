@@ -1,5 +1,6 @@
 .content {
-  padding: 80px 100px;
+  padding: 30px 30px;
+  background-color: $bg-ligth-color;
 
   @media screen and (max-width: 475px) {
     padding: 30px 16px;
@@ -7,9 +8,10 @@
 }
 
 .title {
-  font-family: $title-font;
   color: $main-dark-color;
+  font-family: $title-font;
   font-weight: 400;
   font-size: 40px;
   line-height: 115%;
+  margin-bottom: 50px;
 }

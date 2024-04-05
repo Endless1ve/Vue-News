@@ -25,6 +25,18 @@ const NewsModule = {
     searchQuery(state) {
       return state.searchQuery;
     },
+
+    news(state) {
+      return state.news;
+    },
+
+    newsCounter(state) {
+      return state.newsCounter;
+    },
+
+    isMoreNews(state) {
+      return state.isMoreNews;
+    },
   },
 
   mutations: {
@@ -41,7 +53,7 @@ const NewsModule = {
     },
 
     increaseNewsCounter(state, num) {
-      state.newsCounter = state.newsCounter + num;
+      state.newsCounter += num;
     },
 
     setTotalNews(state, num) {

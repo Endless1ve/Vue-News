@@ -1,4 +1,4 @@
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 import SearchBlock from "@/components/SearchBlock/SearchBlock.vue";
 import NewsBlock from "@/components/NewsBlock/NewsBlock.vue";
@@ -13,6 +13,12 @@ export default {
       fetchPopularNews: "news/fetchPopularNews",
     }),
   },
+  computed: {
+    ...mapGetters({
+      news: "news/news",
+    }),
+  },
+
   created() {
     this.fetchPopularNews();
   },

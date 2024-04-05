@@ -1,9 +1,15 @@
 <template>
-  <div class="newsList"></div>
+  <div class="newsList">
+    <NewsItem v-for="num of newsCounter" :key="num" :item="news[num - 1]" />
+  </div>
 </template>
 
 <script>
-  export default {};
+  import NewsList from "./NewsList.model";
+
+  export default NewsList;
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @import "./NewsList.module";
+</style>
