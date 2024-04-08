@@ -1,6 +1,6 @@
 <template>
   <article class="item" v-if="item">
-    <a class="itemLink" :href="item.url">
+    <a class="itemLink" :href="item.url" target="_blank">
       <img class="itemImage" :src="item.urlToImage" :alt="item.title" />
       <div class="itemTexts">
         <div class="textsContent">
