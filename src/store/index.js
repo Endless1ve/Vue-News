@@ -1,14 +1,14 @@
 import { createStore } from "vuex";
 
-import HeaderModule from "./modules/HeaderModule";
-import MenuModule from "./modules/MenuModule";
-import AuthModule from "./modules/AuthModule";
+import headerModule from "./modules/header/headerModule";
+import menuModule from "./modules/menu/menuModule";
+import authModule from "./modules/auth/authModule";
 
 const store = createStore({
   modules: {
-    header: HeaderModule,
-    menu: MenuModule,
-    auth: AuthModule,
+    header: headerModule,
+    menu: menuModule,
+    auth: authModule,
   },
   strict: process.env.NODE_ENV !== "production",
 });
