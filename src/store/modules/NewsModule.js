@@ -26,6 +26,10 @@ const NewsModule = {
       return state.searchQuery;
     },
 
+    isNewsLoading(state) {
+      return state.isNewsLoading;
+    },
+
     news(state) {
       return state.news;
     },

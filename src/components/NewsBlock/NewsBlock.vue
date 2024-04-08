@@ -1,6 +1,7 @@
 <template>
   <section class="news">
-    <div class="content">
+    <PreloaderBlock v-if="isNewsLoading" />
+    <div class="content" v-else-if="!isNewsLoading && news.length !== 0">
       <h2 class="title">Результаты поиска</h2>
       <NewsList />
       <div class="button" v-if="isMoreNews" @click="renderNews">

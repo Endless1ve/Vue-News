@@ -1,7 +1,7 @@
 <template>
   <div>
     <SearchBlock />
-    <NewsBlock v-if="news.length !== 0" />
+    <NewsBlock />
   </div>
 </template>
 
