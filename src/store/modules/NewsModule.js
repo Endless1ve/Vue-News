@@ -41,6 +41,10 @@ const NewsModule = {
     isMoreNews(state) {
       return state.isMoreNews;
     },
+
+    isNoResults(state) {
+      return state.isNoResults;
+    },
   },
 
   mutations: {
@@ -79,6 +83,10 @@ const NewsModule = {
     setPopularLoading(state, bool) {
       state.isPopularLoading = bool;
     },
+
+    setNoResults(state, bool) {
+      state.isNoResults = bool;
+    },
   },
 
   actions: {
@@ -112,6 +120,7 @@ const NewsModule = {
       try {
         if (state.searchQuery) {
           commit("setNewsLoading", true);
+          commit("setNoResults", false);
           const response = await axios.get(
             "https://nomoreparties.co/news/v2/everything",
             {
@@ -125,9 +134,13 @@ const NewsModule = {
             }
           );
           commit("setTotalNews", response.data.articles.length);
-          commit("setNews", response.data.articles);
           commit("setNewsCounter", 0);
-          dispatch("renderNews");
+          if (state.totalNews > 0) {
+            commit("setNews", response.data.articles);
+            dispatch("renderNews");
+          } else {
+            commit("setNoResults", true);
+          }
         } else {
           alert("Введите ключевое слово в строку поиска");
         }

@@ -1,6 +1,7 @@
 <template>
   <section class="news">
     <PreloaderBlock v-if="isNewsLoading" />
+    <NoFound v-if="isNoResults" />
     <div class="content" v-else-if="!isNewsLoading && news.length !== 0">
       <h2 class="title">Результаты поиска</h2>
       <NewsList />
