@@ -1,12 +1,12 @@
 import { createStore } from "vuex";
 
-import NewsModule from "./modules/NewsModule";
-import DateModule from "./modules/DateModule";
+import newsModule from "./modules/news/newsModule";
+import dateModule from "./modules/date/dateModule";
 
 const store = createStore({
   modules: {
-    news: NewsModule,
-    date: DateModule,
+    news: newsModule,
+    date: dateModule,
   },
   strict: process.env.NODE_ENV !== "production",
 });
