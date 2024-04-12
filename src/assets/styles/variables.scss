@@ -1,7 +1,10 @@
 $title-font: "RobotoSlab", Arial, Helvetica, sans-serif;
 $text-font: "Roboto", Arial, Helvetica, sans-serif;
 $main-dark-color: #1a1b22;
-$second-dark-color: #347eff;
+$second-dark-color: #2f71e5;
+$second-dark-active: #2a65cc;
+$second-dark-hover: #347eff;
+
 $main-light-color: #ffffff;
 $second-ligth-color: #b6bcbf;
 $bg-ligth-color: #f5f6f7;
@@ -31,5 +34,11 @@ $bg-ligth-color: #f5f6f7;
       margin-right: $row-gap;
       margin-bottom: $column-gap;
     }
+  }
+}
+
+@mixin hover-supports {
+  @media (hover: hover) {
+    @content;
   }
 }
