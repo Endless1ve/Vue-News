@@ -1,13 +1,38 @@
-import menuState from "./menuHandlers/menuState";
-import menuGetters from "./menuHandlers/menuGetters";
-import menuMutations from "./menuHandlers/menuMutations";
-import menuActions from "./menuHandlers/menuActions";
-
 const menuModule = {
-  state: menuState,
-  getters: menuGetters,
-  mutations: menuMutations,
-  actions: menuActions,
+  state: () => ({
+    isMenuOpen: false,
+    isLargeScreen: window.innerWidth > 650,
+  }),
+
+  getters: {
+    isMenuOpen(state) {
+      return state.isMenuOpen;
+    },
+    isLargeScreen(state) {
+      return state.isLargeScreen;
+    },
+  },
+
+  mutations: {
+    updateLargeState(state) {
+      state.isLargeScreen = window.innerWidth > 650;
+    },
+    toggleMenu(state) {
+      state.isMenuOpen = !state.isMenuOpen;
+    },
+    closeMenu(state) {
+      state.isMenuOpen = false;
+    },
+  },
+
+  actions: {
+    handleResize({ state, commit }) {
+      commit("updateLargeState");
+      if (state.isLargeScreen) {
+        commit("closeMenu");
+      }
+    },
+  },
   namespaced: true,
 };
 
