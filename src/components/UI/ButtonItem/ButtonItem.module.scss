@@ -18,21 +18,21 @@
 
   @include hover-supports {
     &:hover {
-      background-color: $button-hover;
+      background-color: $second-dark-hover;
     }
   }
 
   &:disabled {
-    background-color: #b6bcbf;
+    background-color: $second-ligth-color;
     animation: none !important;
     cursor: default;
 
     &:active {
-      background-color: #b6bcbf;
+      background-color: $second-ligth-color;
     }
   }
 
   &:active {
-    background-color: $button-active;
+    background-color: $second-dark-active;
   }
 }
