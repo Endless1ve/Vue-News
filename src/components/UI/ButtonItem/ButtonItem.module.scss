@@ -15,10 +15,24 @@
   @media screen and (max-width: 425px) {
     padding: 15px 0;
   }
-}
 
-.button:disabled {
-  background-color: #b6bcbf;
-  animation: none !important;
-  cursor: default;
+  @include hover-supports {
+    &:hover {
+      background-color: $button-hover;
+    }
+  }
+
+  &:disabled {
+    background-color: #b6bcbf;
+    animation: none !important;
+    cursor: default;
+
+    &:active {
+      background-color: #b6bcbf;
+    }
+  }
+
+  &:active {
+    background-color: $button-active;
+  }
 }
