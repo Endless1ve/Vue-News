@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="header"
-    :class="{ 'header-light': isHeaderLight, 'header-dark': isMenuOpen }">
+  <header class="header" :class="themeClass">
     <p class="headerLogo">VueNews</p>
     <HeaderMenu v-if="isMenuOpen || isLargeScreen" />
     <BurgerButton @click="toggleMenu" />

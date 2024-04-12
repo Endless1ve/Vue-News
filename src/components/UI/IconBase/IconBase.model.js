@@ -1,3 +1,5 @@
+import { mapGetters } from "vuex";
+
 export default {
   props: {
     iconName: {
@@ -11,6 +13,16 @@ export default {
     height: {
       type: [Number, String],
       default: 30,
+    },
+  },
+  computed: {
+    ...mapGetters({
+      isHeaderLight: "header/isHeaderLight",
+    }),
+    themeClass() {
+      return {
+        "icon-ligth": this.isHeaderLight,
+      };
     },
   },
 };

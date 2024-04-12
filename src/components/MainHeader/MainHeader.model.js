@@ -22,6 +22,12 @@ export default {
       isMenuOpen: "menu/isMenuOpen",
       isLargeScreen: "menu/isLargeScreen",
     }),
+    themeClass() {
+      return {
+        "header-light": this.isHeaderLight,
+        "header-dark": this.isMenuOpen,
+      };
+    },
   },
   mounted() {
     window.addEventListener("resize", this.handleResize);
