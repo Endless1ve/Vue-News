@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvuenews"]=self["webpackChunkvuenews"]||[]).push([[555],{3555:function(e,a,r){r.r(a),r.d(a,{default:function(){return k}});var n=r(6768);function t(e,a,r,t,s,d){const u=(0,n.g2)("MainHeader");return(0,n.uX)(),(0,n.CE)("div",null,[(0,n.bF)(u)])}var s=r(782),d=r(7777),u={components:{MainHeader:d.A},methods:{...(0,s.i0)({setHeaderDark:"header/setHeaderDark"})},created(){this.setHeaderDark()}},c=u,i=r(1241);const o=(0,i.A)(c,[["render",t],["__scopeId","data-v-39d26a08"]]);var k=o}}]);
-//# sourceMappingURL=555.7b32d188.js.map
