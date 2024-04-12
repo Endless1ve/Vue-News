@@ -10,10 +10,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      fetchPopularNews: "news/fetchPopularNews",
+      getDate: "date/getDate",
     }),
   },
   created() {
-    this.fetchPopularNews();
+    this.getDate();
   },
 };
