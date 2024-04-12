@@ -11,9 +11,11 @@ export default {
   methods: {
     ...mapActions({
       getDate: "date/getDate",
+      fetchPopularNews: "popularNews/fetchPopularNews",
     }),
   },
   created() {
     this.getDate();
+    this.fetchPopularNews();
   },
 };

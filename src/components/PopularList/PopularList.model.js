@@ -6,7 +6,7 @@ export default {
   components: { PopularItem },
   computed: {
     ...mapGetters({
-      popularNews: "news/popularNews",
+      popularNews: "popularNews/popularNews",
     }),
   },
 };

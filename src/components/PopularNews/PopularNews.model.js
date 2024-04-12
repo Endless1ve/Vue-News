@@ -10,7 +10,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      isPopularLoading: "news/isPopularLoading",
+      isPopularLoading: "popularNews/isPopularLoading",
     }),
   },
 };
