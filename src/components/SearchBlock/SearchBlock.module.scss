@@ -3,6 +3,8 @@
   background-image: url($search-image);
   background-position: center top;
   background-size: cover;
+  background-color: rgba($color: $main-dark-color, $alpha: 0.7);
+  background-blend-mode: overlay;
   @include flex-column;
 
   @media screen and (max-width: 400px) {
