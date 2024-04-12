@@ -3,13 +3,28 @@ import axios from "axios";
 const newsModule = {
   state: () => ({
     searchQuery: "",
-
     news: [],
+
+    isInputValid: false,
+    errorText: "Поле не должно быть пустым",
+    isSearchError: false,
   }),
 
   getters: {
     searchQuery(state) {
       return state.searchQuery;
+    },
+
+    errorText(state) {
+      return state.errorText;
+    },
+
+    isSearchError(state) {
+      return state.isSearchError;
+    },
+
+    isInputValid(state) {
+      return state.isInputValid;
     },
   },
 
@@ -21,12 +36,32 @@ const newsModule = {
     setNews(state, data) {
       state.news = data;
     },
+
+    toggleSearchError(state, bool) {
+      state.isSearchError = bool;
+    },
+
+    toggleInputValidity(state, bool) {
+      state.isInputValid = bool;
+    },
   },
 
   actions: {
-    async fetchNews({ state, commit, rootState }) {
+    validateSearchInput({ state, commit }) {
+      if (state.searchQuery.length === 0) {
+        commit("toggleSearchError", true);
+        commit("toggleInputValidity", false);
+      } else {
+        commit("toggleSearchError", false);
+        commit("toggleInputValidity", true);
+      }
+    },
+
+    async fetchNews({ state, commit, dispatch, rootState }) {
       try {
-        if (state.searchQuery) {
+        dispatch("validateSearchInput");
+
+        if (state.isInputValid) {
           const response = await axios.get(
             "https://nomoreparties.co/news/v2/everything",
             {
@@ -39,8 +74,6 @@ const newsModule = {
             }
           );
           commit("setNews", response.data.articles);
-        } else {
-          alert("Введите ключевое слово в строку поиска");
         }
       } catch (err) {
         console.log(err);

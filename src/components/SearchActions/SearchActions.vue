@@ -1,6 +1,11 @@
 <template>
   <div class="searchActions">
-    <InputItem @keyup.enter="fetchNews" />
+    <div>
+      <InputItem @keyup.enter="fetchNews" @input="validateSearchInput" />
+      <ErrorItem class="searchError" :visibilityProp="isSearchError">
+        Поле не должно быть пустым
+      </ErrorItem>
+    </div>
     <div class="searchButton">
       <ButtonItem @click="fetchNews" :disabled="!searchQuery">
         Искать
