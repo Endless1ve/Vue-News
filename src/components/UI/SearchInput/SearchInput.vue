@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import InputItem from "./InputItem.model";
+  import SearchInput from "./SearchInput.model";
 
-  export default InputItem;
+  export default SearchInput;
 </script>
 
 <style lang="scss" scoped>
-  @import "./InputItem.module";
+  @import "./SearchInput.module";
 </style>

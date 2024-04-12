@@ -1,12 +1,12 @@
 import { mapActions, mapGetters } from "vuex";
 
-import InputItem from "@/components/UI/InputItem/InputItem.vue";
+import SearchInput from "@/components/UI/SearchInput/SearchInput.vue";
 import ButtonItem from "@/components/UI/ButtonItem/ButtonItem.vue";
 import ErrorItem from "@/components/UI/ErrorItem/ErrorItem.vue";
 
 export default {
   components: {
-    InputItem,
+    SearchInput,
     ButtonItem,
     ErrorItem,
   },

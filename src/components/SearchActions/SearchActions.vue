@@ -1,7 +1,10 @@
 <template>
   <div class="searchActions">
     <div>
-      <InputItem @keyup.enter="fetchNews" @input="validateSearchInput" />
+      <SearchInput
+        @keyup.enter="fetchNews"
+        @input="validateSearchInput"
+        v-focus />
       <ErrorItem class="searchError" :visibilityProp="isSearchError">
         Поле не должно быть пустым
       </ErrorItem>
