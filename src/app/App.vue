@@ -1,14 +1,12 @@
+<script setup></script>
+
 <template>
   <RouterView />
 </template>
 
-<script>
-  export default {};
-</script>
-
 <style lang="scss">
-  @import "@/assets/styles/normalize";
-  @import "@/assets/styles/fonts";
+  @import "./styles/normalize.scss";
+  @import "./styles/fonts.scss";
 
   #app {
     width: 100%;
