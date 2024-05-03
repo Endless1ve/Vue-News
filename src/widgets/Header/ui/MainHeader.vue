@@ -5,6 +5,7 @@
 <template>
   <header class="header">
     <MainLogo />
+    <slot></slot>
   </header>
 </template>
 

@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+  import { MainHeader } from "@/widgets/Header";
+  import { MainMenu } from "@/widgets/Menu";
+</script>
 
 <template>
-  <div></div>
+  <div>
+    <MainHeader><MainMenu /></MainHeader>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
