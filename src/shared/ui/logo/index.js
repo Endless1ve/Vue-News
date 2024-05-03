@@ -1,3 +1,3 @@
-import { MainLogo } from "./MainLogo.vue";
+import MainLogo from "./MainLogo.vue";
 
 export { MainLogo };
