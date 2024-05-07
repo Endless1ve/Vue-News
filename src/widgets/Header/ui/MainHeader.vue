@@ -1,15 +1,18 @@
 <script setup>
   import { computed } from "vue";
 
-  import { MainMenu } from "@/widgets/Menu";
-  import MainLogo from "@/shared/ui/logo/MainLogo.vue";
+  import { MainMenu, useMenuStore } from "@/widgets/Menu";
 
   import { useHeaderStore } from "../store/header";
 
+  import MainLogo from "@/shared/ui/logo/MainLogo.vue";
+
   const headerStore = useHeaderStore();
+  const menuStore = useMenuStore();
 
   const themeClass = computed(() => ({
     "header-light": headerStore.isHeaderLight,
+    "header-dark": menuStore.isMenuOpen,
   }));
 </script>
 

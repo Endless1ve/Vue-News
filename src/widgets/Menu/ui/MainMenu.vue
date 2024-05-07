@@ -1,9 +1,18 @@
 <script setup>
+  import { onMounted } from "vue";
   import NavigationLinks from "./NavigationLinks.vue";
+
+  import { useMenuStore } from "../store/menu";
+
+  const menuStore = useMenuStore();
+
+  onMounted(() => {
+    window.addEventListener("resize", menuStore.handleResize);
+  });
 </script>
 
 <template>
-  <nav class="menu">
+  <nav class="menu" v-if="menuStore.isMenuOpen || menuStore.isLargeScreen">
     <NavigationLinks />
   </nav>
 </template>
