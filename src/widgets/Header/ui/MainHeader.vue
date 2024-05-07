@@ -1,11 +1,12 @@
 <script setup>
-  import { MainLogo } from "@/shared/ui/logo";
+  import { MainMenu } from "@/widgets/Menu";
+  import MainLogo from "@/shared/ui/logo/MainLogo.vue";
 </script>
 
 <template>
   <header class="header">
     <MainLogo />
-    <slot></slot>
+    <MainMenu />
   </header>
 </template>
 

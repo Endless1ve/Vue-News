@@ -1,4 +1,3 @@
-import MainMenu from "./ui/MainMenu";
-import { useMenuStore } from "./store/menu";
+import MainMenu from "./ui/MainMenu.vue";
 
-export { MainMenu, useMenuStore };
+export { MainMenu };

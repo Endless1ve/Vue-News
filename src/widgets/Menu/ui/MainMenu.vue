@@ -1,12 +1,17 @@
-<script setup></script>
+<script setup>
+  import NavigationLinks from "./NavigationLinks.vue";
+</script>
 
 <template>
-  <div class="menu"></div>
+  <nav class="menu">
+    <NavigationLinks />
+  </nav>
 </template>
 
 <style lang="scss" scoped>
   .menu {
     @include flex-row;
+    align-items: flex-end;
     @include gap-check-supports(0, 70px);
 
     @media screen and (max-width: 768px) {
@@ -22,6 +27,7 @@
       padding: 20px 40px 40px;
       color: $main-light-color;
       background-color: $main-dark-color;
+      align-items: flex-start;
       @include flex-column-reverse;
     }
 
