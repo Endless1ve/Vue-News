@@ -1,10 +1,17 @@
 <script setup>
-  import { MainHeader } from "@/widgets/Header";
+  import { onMounted } from "vue";
+  import { MainHeader, useHeaderStore } from "@/widgets/Header";
+
+  const headerStore = useHeaderStore();
+
+  onMounted(() => {
+    headerStore.setHeaderLigth();
+  });
 </script>
 
 <template>
   <div>
-    <MainHeader></MainHeader>
+    <MainHeader />
   </div>
 </template>
 

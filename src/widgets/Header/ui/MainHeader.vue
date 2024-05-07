@@ -1,10 +1,20 @@
 <script setup>
+  import { computed } from "vue";
+
   import { MainMenu } from "@/widgets/Menu";
   import MainLogo from "@/shared/ui/logo/MainLogo.vue";
+
+  import { useHeaderStore } from "../store/header";
+
+  const headerStore = useHeaderStore();
+
+  const themeClass = computed(() => ({
+    "header-light": headerStore.isHeaderLight,
+  }));
 </script>
 
 <template>
-  <header class="header">
+  <header class="header" :class="themeClass">
     <MainLogo />
     <MainMenu />
   </header>
